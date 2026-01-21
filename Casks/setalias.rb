@@ -1,8 +1,8 @@
 cask "setalias" do
-  version "2.5.8"
-  sha256 "a6ab5e5d9b9a76c9edc85c89c362f6a6c7f6f1d55279e1633e22e29836a83072"
+  version "2.5.9"
+  sha256 "8361e9f7af94aed86089a6992ce8481c98a993f67441c8cd8851528066c5a5aa"
 
-  url "https://github.com/rixingyike/homebrew-setalias/releases/download/v2.5.8/SetAlias.dmg"
+  url "https://github.com/rixingyike/homebrew-setalias/releases/download/v2.5.9/SetAlias.dmg"
   name "SetAlias"
   desc "程序员喜欢用的终端写作工具"
   homepage "https://github.com/rixingyike/homebrew-setalias"
