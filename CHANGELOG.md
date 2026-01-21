@@ -1,5 +1,17 @@
 # Changelog
 
+## [v2.3.5] - 2026-01-21
+### 重大变更
+- **零 Python 依赖 (Zero-Dependency Media)**: 多媒体处理栈（图片生成、音频/GIF 压缩）全面去 Python 化，转为直接调用 FFmpeg。
+    - 移除 Python 库: `Pillow`, `pydub`, `pygifsicle`, `pyaudioop` (这些库经常因 Python 版本兼容性导致安装失败)。
+    - 新增核心依赖: `ffmpeg` (必须安装: `brew install ffmpeg`)。
+    - 好处: SetAlias 不再受系统 Python 版本混乱的影响，只要有 ffmpeg 就能稳定运行。
+
+### 修复与优化
+- **音频上传修复**: 修复了发布到墨问笔记后音频无法播放或编辑丢失的问题。修正了 Payload 中的 `audioUuid` 属性名及 `showNote` 初始化策略。
+- **封面图生成**: `gen_img` 命令重写为 Shell 脚本，底层使用 `ffmpeg` 的 `drawtext` 滤镜，生成速度更快且无需 Python 环境。
+- **环境兼容性**: `install.sh` 不再强制检查 Python 图像处理库，安装流程更顺滑。
+
 ## [v2.3.2] - 2026-01-20
 ### 修复与优化
 - **Cnblogs 跳过优化**: `post_cnblogs.sh` 现在能正确识别配置为空的情况并静默跳过，`distribute.sh` 提供明确的“(配置缺失)”提示，不再误报“分发成功”。
