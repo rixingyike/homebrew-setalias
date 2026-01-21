@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.4.0] - 2026-01-21
+### 即装即用 (Out-of-the-Box)
+- **全自动依赖安装**: 安装程序 `install.sh` 现在能接管一切繁琐的配置工作。
+    - **Python 依赖**: 自动检测缺少的库 (requests, openai 等) 并通过 pip 安装。
+    - **FFmpeg (Windows)**: 自动从 gyan.dev 下载、解压至 `~/SetAlias/bin` 并配置 PATH。
+    - **FFmpeg (macOS)**: 自动从 evermeet.cx 下载并安装至 `/usr/local/bin` (需 sudo 权限)。
+- **Windows (Git Bash)**: 对 Windows 用户的支持达到了一等公民级别，只需一行 curl 命令即可完成完整环境搭建。
+
 ## [v2.3.8] - 2026-01-21
 ### 新功能 (Windows 专属)
 - **依赖自动安装**: 
